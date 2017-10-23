@@ -6,9 +6,6 @@ from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, Cropping2D, Conv2D, MaxPooling2D, Dropout
 
 def process_image(img):
-    w = img.shape[1]
-    h = img.shape[0]
-    img = img[60:h-20, 0:w,:]
     return img
 
 X_file = 'data/X_file.npy'
@@ -81,6 +78,7 @@ else:
 
 model = Sequential()
 model.add(Lambda(lambda x: (x / 255.0) - 0.5, input_shape=(80,320,3)))
+model.add(Cropping2D(cropping=((60,20), (0,0))))
 model.add(Conv2D(24, (5, 5), strides=(2, 2), activation="relu"))
 model.add(Conv2D(36, (5, 5), strides=(2, 2), activation="relu"))
 model.add(Conv2D(48, (5, 5), strides=(2, 2), activation="relu"))
