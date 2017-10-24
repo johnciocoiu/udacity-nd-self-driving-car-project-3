@@ -35,7 +35,7 @@ for fnum, folder in enumerate(data_folders):
     first = True
 
     # Add a steering correction
-    steering_correction = 0.2
+    steering_correction = 0.225
     for j, row in enumerate(rows):
         # Print the current finishing of the current folder
         print "\r", j+1, "/", len(rows), "completed...",
@@ -97,8 +97,11 @@ model.add(Conv2D(64, (3, 3), strides=(1, 1), activation="relu"))
 model.add(Conv2D(64, (3, 3), strides=(1, 1), activation="relu"))
 model.add(Flatten())
 model.add(Dense(100))
+model.add(Dropout(0.5))
 model.add(Dense(50))
+model.add(Dropout(0.5))
 model.add(Dense(10))
+model.add(Dropout(0.5))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
