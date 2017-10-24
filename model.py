@@ -16,13 +16,14 @@ y_file = 'data/y_file.npy'
 # track1_reverse = driving mouse track 1 the other way around
 # training = driving with keyboard
 # track2 = single lap on track 2 with mouse
-data_folders = ['data/internet/', 'data/track1/', 'data/track1_2/', 'data/track1_reverse/', 'data/training/', 'data/track2/']
+data_folders = ['data/internet/', 'data/track1/', 'data/track1_2/', 'data/track1_reverse/', 'data/training/']
 
 car_images = []
 steering_angles = []
 
 # For every folder, add the data to the arrays
 for fnum, folder in enumerate(data_folders):
+    print ""
     print "Doing folder ", fnum+1, "/", len(data_folders),
     print ""
     rows = []
