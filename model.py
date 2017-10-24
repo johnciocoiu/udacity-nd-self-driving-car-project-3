@@ -11,7 +11,7 @@ def process_image(img):
 X_file = 'data/X_file.npy'
 y_file = 'data/y_file.npy'
 
-data_folders = ['data/internet/', 'data/track1/', 'data/track1_reverse/']
+data_folders = ['data/internet/']
 
 if os.path.exists(X_file) and os.path.exists(y_file):
     X_train = np.load(X_file)
@@ -37,7 +37,7 @@ else:
         steering_correction = 0.2
 
         for j, row in enumerate(rows):
-            print "(", j+1, "/", len(rows), ")", round((j+1)/len(rows)*100,2), "% completed..."
+            # print "(", j+1, "/", len(rows), ")", round((j+1)/len(rows)*100,2), "% completed..."
             
             # Skip header row
             if first:
