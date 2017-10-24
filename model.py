@@ -9,6 +9,8 @@ from keras.layers import Flatten, Dense, Lambda, Cropping2D, Conv2D, MaxPooling2
 X_file = 'data/X_file.npy'
 y_file = 'data/y_file.npy'
 
+flags.DEFINE_integer('epochs', 10, "The number of epochs.")
+
 # The folders to read the data from, multiple drivings around the track
 # internet = from udacity
 # track1 = driving mouse on track 1
@@ -77,7 +79,7 @@ for fnum, folder in enumerate(data_folders):
             steering_angles.append(angle)
 
             # Add flipped steering angle to array
-            steering_angles.append(-angle)
+            steering_angles.append(angle*-1.0)
 
 # Generate np arrays
 X_train = np.array(car_images)
@@ -102,7 +104,7 @@ model.add(Dense(10))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
-history = model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=10)
+history = model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=FLAGS.epochs)
 
 # Save the model to a file
 model.save('model.h5')
