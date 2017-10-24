@@ -45,7 +45,7 @@ else:
         steering_correction = 0.2
         for j, row in enumerate(rows):
             # Print the current finishing of the current folder
-            print "(", j+1, "/", len(rows), ")", round((j+1)/len(rows)*100,2), "% completed...",
+            print "\r (", j+1, "/", len(rows), ")", round((j+1)/len(rows)*100,2), "% completed...",
         
             # Skip header row
             if first:
