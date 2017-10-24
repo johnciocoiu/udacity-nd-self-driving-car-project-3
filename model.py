@@ -35,7 +35,7 @@ for fnum, folder in enumerate(data_folders):
     first = True
 
     # Add a steering correction
-    steering_correction = 0.225
+    steering_correction = 0.2
     for j, row in enumerate(rows):
         # Print the current finishing of the current folder
         print "\r", j+1, "/", len(rows), "completed...",
