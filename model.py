@@ -9,6 +9,8 @@ from keras.layers import Flatten, Dense, Lambda, Cropping2D, Conv2D, MaxPooling2
 X_file = 'data/X_file.npy'
 y_file = 'data/y_file.npy'
 
+flags = tf.app.flags
+FLAGS = flags.FLAGS
 flags.DEFINE_integer('epochs', 10, "The number of epochs.")
 
 # The folders to read the data from, multiple drivings around the track
