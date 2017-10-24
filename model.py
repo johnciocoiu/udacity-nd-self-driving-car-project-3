@@ -2,6 +2,7 @@ import csv
 import cv2
 import numpy as np
 import os
+import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, Cropping2D, Conv2D, MaxPooling2D, Dropout
 
