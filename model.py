@@ -21,7 +21,7 @@ flags.DEFINE_integer('epochs', 10, "The number of epochs.")
 # track1_reverse = driving mouse track 1 the other way around
 # training = driving with keyboard
 # track2 = single lap on track 2 with mouse
-data_folders = ['data/track2/', 'data/internet/', 'data/track1/', 'data/track1_2/', 'data/track1_reverse/', 'data/training/']
+data_folders = ['data/internet/', 'data/track1/', 'data/track1_2/', 'data/track1_reverse/']
 
 car_images = []
 steering_angles = []
