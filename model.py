@@ -60,6 +60,7 @@ for fnum, folder in enumerate(data_folders):
             path = folder+"/IMG/"
             img_loc = row[i].split('/')[-1]
             img = cv2.imread(path + img_loc)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
             # Add images to array
             car_images.append(img)
